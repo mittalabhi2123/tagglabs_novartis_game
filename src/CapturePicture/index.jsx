@@ -3,11 +3,12 @@ import React, { Component, Fragment } from 'react';
 import { Card } from 'reactstrap';
 import Webcam from '../Webcam';
 import PropTypes from 'prop-types';
-import verifyUser from '../assets/verifyUser.png';
 
 
 const propTypes = {
   updateState: PropTypes.func.isRequired,
+  event: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
 };
 
 export default class CapturePicture extends Component {
@@ -39,7 +40,7 @@ export default class CapturePicture extends Component {
       return;
     }
     initAWS();
-    fetchUserDataByImage(screenshot, this.props.updateState, this.stopTimer);
+    fetchUserDataByImage(screenshot, this.props.updateState, this.stopTimer, this.props.event, this.props.email);
     this.setState({ screenshot });
   }
 
@@ -52,9 +53,9 @@ export default class CapturePicture extends Component {
   render() {
     return (
       <Fragment>
-        <Card style={{width:"400", height:"300", borderRadius:"25px"}}>
+        <Card style={{position:"absolute", top:"50%", left:"10%"}}>
           <Webcam
-            style={{objectFit:"fill", borderRadius:"25px"}}
+            style={{objectFit:"fill"}}
             audio={false}
             ref={node => this.webcam = node}
           />

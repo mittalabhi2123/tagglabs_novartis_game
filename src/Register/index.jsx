@@ -5,6 +5,10 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 import buttonWithText from '../assets/buttonWithText.png';
 
+const propTypes = {
+  updateStage: PropTypes.func.isRequired,
+};
+
 export default class Register extends Component {
 
   constructor(props) {
@@ -25,7 +29,7 @@ export default class Register extends Component {
       return;
     }
     initAWS();
-    register(email, name, empId);
+    register(email, name, empId, this.props.updateStage);
   }
 
   render() {
@@ -33,7 +37,7 @@ export default class Register extends Component {
       <Label style={{color:"red", fontSize:"-webkit-xxx-large"}}>{this.state.error}</Label>
     );
     return (
-      <Fragment>
+      <div>
         {this.state.error ? error : ''}
         <Row style={{paddingTop:"12%", paddingBottom:"2%"}}>
           <Col xs="4" />
@@ -90,7 +94,9 @@ export default class Register extends Component {
           </Col>
           <Col xs="5" />
         </Row>
-      </Fragment>
+      </div>
     );
   }
 }
+
+Register.propTypes = propTypes;
