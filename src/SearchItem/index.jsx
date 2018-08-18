@@ -1,11 +1,7 @@
-import { initAWS, fetchUserDataByImage } from '../Common/helper.js';
 import './styles.scss';
 import React, { Component, Fragment } from 'react';
-import Register from '../Register';
-import { Card, Row, Col,Label } from 'reactstrap';
-import Webcam from '../Webcam';
+import { Row, Col, Label } from 'reactstrap';
 import PropTypes from 'prop-types';
-import frame from '../assets/frame.png';
 import timerVideo from '../assets/321.mp4'
 
 const propTypes = {

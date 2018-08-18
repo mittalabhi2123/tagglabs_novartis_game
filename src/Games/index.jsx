@@ -1,9 +1,8 @@
 import { fetchSearchItems } from '../Common/helper.js';
-import { getEventMessage, getEventsTags } from '../Common/util.js'
+import { getEventMessage } from '../Common/util.js'
 import './styles.scss';
 import React, { Component, Fragment } from 'react';
 import SearchItem from '../SearchItem';
-import { Card } from 'reactstrap';
 import CapturePicture from '../CapturePicture';
 import NextGames from '../NextGames';
 import PropTypes from 'prop-types';

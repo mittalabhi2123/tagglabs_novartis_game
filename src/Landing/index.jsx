@@ -1,15 +1,11 @@
-import { initAWS, fetchUserDataByImage } from '../Common/helper.js';
 import './styles.scss';
 import React, { Component, Fragment } from 'react';
 import Register from '../Register';
 import Games from '../Games';
 import { Col, Label, Row } from 'reactstrap';
-import Webcam from '../Webcam';
-import PropTypes from 'prop-types';
 import Screen1 from '../assets/Screen1.png';
 import search from '../assets/search.png';
 import trophy from '../assets/trophy.png';
-import loading from '../assets/loading.mp4'
 
 export default class Landing extends Component {
 

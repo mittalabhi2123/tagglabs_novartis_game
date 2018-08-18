@@ -1,10 +1,6 @@
-import { fetchSearchItems } from '../Common/helper.js';
-import { getEventMessage, getEventsTags } from '../Common/util.js'
 import './styles.scss';
 import React, { Component, Fragment } from 'react';
-import SearchItem from '../SearchItem';
-import { Card, Row, Col, Label } from 'reactstrap';
-import CapturePicture from '../CapturePicture';
+import { Row, Col, Label } from 'reactstrap';
 import PropTypes from 'prop-types';
 import nextButton from '../assets/nextButton.png';
 import finish from '../assets/finish.png';

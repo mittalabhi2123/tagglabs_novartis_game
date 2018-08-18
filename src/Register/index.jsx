@@ -1,6 +1,6 @@
 import { initAWS, register } from '../Common/helper.js';
-import React, { Component, Fragment } from 'react';
-import { Card, Row, Col, Label, Input } from 'reactstrap';
+import React, { Component } from 'react';
+import { Row, Col, Label, Input } from 'reactstrap';
 import PropTypes from 'prop-types';
 import './styles.scss';
 import buttonWithText from '../assets/buttonWithText.png';
