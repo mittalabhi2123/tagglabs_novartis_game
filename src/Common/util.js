@@ -26,24 +26,33 @@ export const getEventMessage = (eventId) => {
 export const getEventsTags = (eventId) => {
   switch (eventId) {
     case 'SOCIAL_HUB':
-      return ['Social', 'Dining Table', 'Kitchen', 'Hardwood'];
+      return ['Social', 'Dining Table', 'Kitchen', 'Hardwood', 'Chair', 'Beverage', 'Drink',
+      'Furniture', 'Table', 'Apartment', 'Housing', 'Indoors', 'Interior Design',
+      'Coffee Table', 'Cushion', 'Home Decor', 'Dining Room', 'Living Room', 'Logo', 'Trademark',
+      'Word', 'Text', 'Shelf', 'Monitor', 'Screen', 'TV', 'Television', 'Loft'];
     case 'RECEPTION':
-      return ['Reception', 'Desk', 'Computer', 'Front Desk'];
+      return ['Reception', 'Desk', 'Computer', 'Front Desk', 'Light Fixture', 'Brass Section',
+      'Music', 'Leisure Activities', 'Musical Instrument', 'Art', 'Flora', 'Table', 'Tabletop',
+      'Lighting', 'Interior Design'];
     case 'PARKING_AREA':
-      return ['Parking', 'Car'];
+      return ['Parking', 'Car', 'Road Sign', 'Street Sign', 'Sign', 'Tunnel', 'Terminal',
+      'Subway', 'Transportation', 'Train Station', 'Parking Lot', 'Automobile', 'Van', 'Vehicle'];
     case 'OPEN_OFFICE_FLOOR_MAP':
-      return ['Map', 'Office', 'Drawing'];
+      return ['Map', 'Office', 'Drawing', 'Diagram', 'Plan', 'Poster', 'Brochure', 'Paper', 'Flyer'];
     case 'ELEVATOR':
-      return ['Elevator', 'Escalator'];
+      return ['Elevator', 'Escalator', 'Door', 'Sliding Door', 'Closet'];
     case 'DESK_LOCKER':
-      return ['Desk', 'Locker', 'Drawer', 'Furniture', 'Couch'];
+      return ['Desk', 'Locker', 'Drawer', 'Furniture', 'Couch', 'Cupboard', 'Sideboard',
+      'Flooring', 'Closet', 'Siding'];
     case 'COLLAB_SPACE_LOUNGE':
-      return ['Recliner', 'Sofa', 'Chair', 'Laptop', 'Computer'];
+      return ['Recliner', 'Sofa', 'Chair', 'Laptop', 'Computer', 'Social', 'Dining Table', 'Kitchen',
+      'Hardwood', 'Chair', 'Beverage', 'Drink', 'Furniture', 'Table', 'Apartment', 'Housing',
+      'Indoors', 'Interior Design', 'Coffee Table', 'Cushion', 'Home Decor', 'Dining Room', 'Living Room'];
     case 'COFFEE_MACHINE':
-      return ['Coffee Machine', 'Machine', 'Coffee', 'Dining Table', 'Kitchen', 'Couch'];
-    case 'BUILDING_FACADE':
-      return ['Building'];
+      return ['Alphabet', 'Coffee Machine', 'Machine', 'Coffee', 'Dining Room', 'Electrical Device',
+      'Kitchen', 'Couch', 'Electronics', 'Aluminium', 'Beverage', 'Drink', 'Cup', 'Appliance'];
     case 'MEETING_ROOM':
-      return ['Screen', 'Telephone', 'Meeting', 'Conference', 'Meeting Room', 'Conference Room'];
+      return ['Screen', 'Telephone', 'Meeting', 'Conference', 'Meeting Room', 'Conference Room',
+      'Plywood', 'Door', 'Molding', 'Photo Booth', 'Chair', 'Furniture'];
   }
 }

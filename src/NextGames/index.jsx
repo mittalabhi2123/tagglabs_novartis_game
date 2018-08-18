@@ -15,7 +15,7 @@ const propTypes = {
   gameNum: PropTypes.number.isRequired,
 };
 
-const NUM_GAMES = 10;
+const NUM_GAMES = 9;
 export default class NewGames extends Component {
 
   constructor(props) {
