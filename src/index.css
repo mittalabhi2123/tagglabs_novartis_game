@@ -17,10 +17,6 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 2rem;
 }
 
-#game-cont {
-  padding-top: 5vh;
-}
-
 #status_bar {
   position: absolute;
   background: #000000;
@@ -36,9 +32,20 @@ h1, h2, h3, h4, h5, h6 {
   height: 5vh;
   vertical-align: bottom;
   margin-left: 1.5rem;
-
 }
 
 #status_bar img:first-child {
   margin-left: 0px;
+}
+
+#game-cont, #cam-screen {
+  width: 100%;
+  padding-top: 5vh;
+  height: 100%
+}
+#game-cont video, #cam-screen video {
+  height: auto;
+  width: auto;
+  max-width: 100%;
+  max-height: 100%;
 }

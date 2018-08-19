@@ -26,16 +26,18 @@ export default class SearchItem extends Component {
 
   render() {
     const videoRenderer = (
-      <video width="100%" src={timerVideo} type="video/mp4" autoPlay preload='auto' />
+      <div id="game-cont">
+        <video src={timerVideo} type="video/mp4" autoPlay preload='auto' />
+      </div>
     );
     const frameRenderer = (
-      <Container className="d-flex h-100" id="game-cont">
+      <Container className="d-flex" id="game-cont">
         <Row className="align-items-center w-100">
           <Col>
             <Container>
               <Row>
                 <Col className="text-center">
-                  <h3 class="display-3">{this.props.item ? 'Find ' + this.props.item.Name : ''}</h3>
+                  <h4 class="display-4">{this.props.item ? 'Find ' + this.props.item.Name : ''}</h4>
                 </Col>
               </Row>
             </Container>

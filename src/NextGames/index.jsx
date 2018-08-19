@@ -33,7 +33,7 @@ export default class NewGames extends Component {
 
   render() {
     const gameMessage = (
-      <Container className="d-flex h-100" id="register-cont">
+      <Container className="d-flex" id="game-cont">
         <Row className="align-items-center w-100">
           <Col>
             <Container>
@@ -48,11 +48,7 @@ export default class NewGames extends Component {
                       )
                     )
                   }
-                </Col>
-              </Row>
-              <Row>
-                <Col>
-                  <Button color="warning" className="btn-lg" onClick={this.nextGame}>{this.props.gameNum === NUM_GAMES ? "Finish" : "Next"}</Button>
+                  <p><Button color="warning" className="btn-lg" onClick={this.nextGame}>{this.props.gameNum === NUM_GAMES ? "Finish" : "Next"}</Button></p>
                 </Col>
               </Row>
             </Container>
@@ -61,42 +57,21 @@ export default class NewGames extends Component {
       </Container>
     );
     const byebye = (
-      <div>
-        <Row style={{paddingTop:"12%", paddingBottom:"2%"}}>
-          <Col xs="4" />
-          <Col xs="4">
-            <Label style={{color:"white", fontSize:"-webkit-xxx-large"}}>Congratulations!</Label>
+      <Container className="d-flex h-100" id="game-cont">
+        <Row className="align-items-center w-100">
+          <Col>
+            <Container>
+              <Row>
+                <Col className="text-center">
+                  <h4>Congratulations!</h4>
+                  <p>You have successfully completed the activity</p>
+                  <p>Look out for exciting prizes.</p>
+                </Col>
+              </Row>
+            </Container>
           </Col>
-          <Col xs="4" />
         </Row>
-        <Row>
-          <Col xs="4" />
-          <Col xs="4">
-            <Label style={{color:"white", fontSize:"x-large", paddingLeft: "6%"}}>
-              You have successfully
-            </Label>
-          </Col>
-          <Col xs="4" />
-        </Row>
-        <Row>
-          <Col xs="4" />
-          <Col xs="4">
-            <Label style={{color:"white", fontSize:"x-large", paddingLeft: "6%"}}>
-              completed the activity
-            </Label>
-          </Col>
-          <Col xs="4" />
-        </Row>
-        <Row>
-          <Col xs="4" />
-          <Col xs="4">
-            <Label style={{color:"white", fontSize:"x-large"}}>
-              Look out for exciting prizes.
-            </Label>
-          </Col>
-          <Col xs="4" />
-        </Row>
-      </div>
+      </Container>
     );
     return (
       <Fragment>
