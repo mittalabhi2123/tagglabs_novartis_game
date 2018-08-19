@@ -31,7 +31,7 @@ export default class Games extends Component {
       this.setState({
         initiating: false,
       });
-    }, 7000);
+    }, 11000);
   }
 
   analyzeImage = (isMatched, score) => {
@@ -51,7 +51,7 @@ export default class Games extends Component {
       this.setState({
         initiating: false,
       });
-    }, 7000);
+    }, 11000);
   }
 
   updateState = (eventData) => {

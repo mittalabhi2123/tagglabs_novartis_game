@@ -157,7 +157,7 @@ export const fetchUserDataByImage = (webcamImage, updateState, stopTimer, event,
       Bytes: getBinary(webcamImage),
     },
     MaxLabels: 123,
-    MinConfidence: 40
+    MinConfidence: 60
   };
   rekognition.detectLabels(params, function (err, data) {
     if (err) {

@@ -158,7 +158,8 @@ class Webcam extends Component {
         .enumerateDevices()
         .then((devices) => {
           let audioSource = null;
-          let videoSource = null;
+          let videoSource = [];
+          let count = 0;
 
           devices.forEach((device) => {
           console.log(device.kind + ": " + device.label +
@@ -166,18 +167,17 @@ class Webcam extends Component {
             if (device.kind === 'audioinput') {
               audioSource = device.deviceId;
             } else if (device.kind === 'videoinput') {
-              videoSource = device.deviceId;
+              videoSource.push(device.deviceId);
             }
           });
-
-          if (this.props.audioSource) {
-            audioSource = this.props.audioSource;
-          }
           if (this.props.videoSource) {
-            videoSource = this.props.videoSource;
+            videoSource.push(this.props.videoSource);
           }
-
-          sourceSelected(audioSource, videoSource);
+          if (navigator.userAgent.match(/Android/i)) {
+            sourceSelected(audioSource, videoSource[1]);
+          } else {
+            sourceSelected(audioSource, videoSource[0]);
+          }
         })
         .catch((error) => {
           console.log(`${error.name}: ${error.message}`); // eslint-disable-line no-console

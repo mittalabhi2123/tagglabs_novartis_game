@@ -21,7 +21,7 @@ export default class SearchItem extends Component {
       this.setState({
         initiating: false,
       });
-    }, 2000);
+    }, 6000);
   }
 
   render() {

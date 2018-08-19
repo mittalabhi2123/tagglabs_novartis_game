@@ -35,12 +35,12 @@ export const getEventsTags = (eventId) => {
       'Music', 'Leisure Activities', 'Musical Instrument', 'Art', 'Flora', 'Table', 'Tabletop',
       'Lighting', 'Interior Design'];
     case 'PARKING_AREA':
-      return ['Parking', 'Car', 'Road Sign', 'Street Sign', 'Sign', 'Tunnel', 'Terminal',
+      return ['Parking', 'Car', 'Road Sign', 'Street Sign', 'Tunnel', 'Terminal',
       'Subway', 'Transportation', 'Train Station', 'Parking Lot', 'Automobile', 'Van', 'Vehicle'];
     case 'OPEN_OFFICE_FLOOR_MAP':
-      return ['Map', 'Office', 'Drawing', 'Diagram', 'Plan', 'Poster', 'Brochure', 'Paper', 'Flyer'];
+      return ['Map', 'Drawing', 'Diagram', 'Plan', 'Poster'];
     case 'ELEVATOR':
-      return ['Elevator', 'Escalator', 'Door', 'Sliding Door', 'Closet'];
+      return ['Elevator', 'Escalator', 'Door', 'Sliding Door'];
     case 'DESK_LOCKER':
       return ['Desk', 'Locker', 'Drawer', 'Furniture', 'Couch', 'Cupboard', 'Sideboard',
       'Flooring', 'Closet', 'Siding'];
@@ -50,7 +50,7 @@ export const getEventsTags = (eventId) => {
       'Indoors', 'Interior Design', 'Coffee Table', 'Cushion', 'Home Decor', 'Dining Room', 'Living Room'];
     case 'COFFEE_MACHINE':
       return ['Alphabet', 'Coffee Machine', 'Machine', 'Coffee', 'Dining Room', 'Electrical Device',
-      'Kitchen', 'Couch', 'Electronics', 'Aluminium', 'Beverage', 'Drink', 'Cup', 'Appliance'];
+      'Kitchen', 'Electronics', 'Aluminium', 'Beverage', 'Drink', 'Cup', 'Appliance'];
     case 'MEETING_ROOM':
       return ['Screen', 'Telephone', 'Meeting', 'Conference', 'Meeting Room', 'Conference Room',
       'Plywood', 'Door', 'Molding', 'Photo Booth', 'Chair', 'Furniture'];
