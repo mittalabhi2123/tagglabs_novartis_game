@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import Register from '../Register';
 import Games from '../Games';
-import { Col, Label, Row } from 'reactstrap';
+import { Col, Label, Row, Container } from 'reactstrap';
 import Screen1 from '../assets/Screen1.png';
 import search from '../assets/search.png';
 import trophy from '../assets/trophy.png';
@@ -55,7 +55,13 @@ export default class Landing extends Component {
 
   renderView = () => {
     const firstScreenRenderer = (
-      <h4 className="text-center">#GetINSPIREady</h4>
+      <Container className="d-flex h-100">
+        <Row className="align-items-center w-100">
+          <Col>
+            <h4 className="text-center">#GetINSPIREady</h4>
+          </Col>
+        </Row>
+      </Container>
     );
     switch (this.state.stage) {
       case 'init':
@@ -74,17 +80,10 @@ export default class Landing extends Component {
 
   render() {
     const statusBar = (
-      <Row style={{margin:"0px", backgroundColor:"black"}}>
-        <Col xs="10" />
-        <Col xs="1">
-          <img src={search} style={{marginLeft:"50%", width:"30%"}}/>
-          <Label style={{color:"white", fontSize:"small"}}>{this.state.gamesFinished}</Label>
-        </Col>
-        <Col xs="1">
-          <img src={trophy} style={{width:"30%"}}/>
-          <Label style={{color:"white", fontSize:"small"}}>{this.state.score}</Label>
-        </Col>
-      </Row>
+      <div id="status_bar" class="w-100 text-right">
+        <img src={search} /> {this.state.gamesFinished}
+        <img src={trophy} /> {this.state.score}
+      </div>
     );
     return (
       <Fragment>

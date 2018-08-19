@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Row, Col, Label } from 'reactstrap';
+import { Container, Row, Col, Label, Button } from 'reactstrap';
 import PropTypes from 'prop-types';
 import nextButton from '../assets/nextButton.png';
 import finish from '../assets/finish.png';
@@ -33,21 +33,32 @@ export default class NewGames extends Component {
 
   render() {
     const gameMessage = (
-      <div style={{position:"absolute", top:"45%", left:"42%"}}>
-        {this.props.message.split('<br/>').map(part => (
-            <Row>
-              <Label style={{color:"white", fontSize:"xx-large", marginLeft: "-10%"}}>
-                {part}
-              </Label>
-            </Row>
-          ))}
-        <Row>
-          <button type="button" onClick={this.nextGame}
-            style={{backgroundColor:"transparent", borderWidth:"0px", width:"160px", height:"60px"}}>
-            <img width="100%" height="70%" border-radius="12px" padding="2px" src={this.props.gameNum === NUM_GAMES ? finish : nextButton} alt=""/>
-          </button>
+      <Container className="d-flex h-100" id="register-cont">
+        <Row className="align-items-center w-100">
+          <Col>
+            <Container>
+              <Row>
+                <Col className="text-center">
+                  {
+                    this.props.message.split('<br/>').map(
+                      part => (
+                        <p>
+                          {part}
+                        </p>
+                      )
+                    )
+                  }
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <Button color="warning" className="btn-lg" onClick={this.nextGame}>{this.props.gameNum === NUM_GAMES ? "Finish" : "Next"}</Button>
+                </Col>
+              </Row>
+            </Container>
+          </Col>
         </Row>
-      </div>
+      </Container>
     );
     const byebye = (
       <div>
