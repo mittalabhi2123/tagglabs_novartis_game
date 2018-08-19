@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { Container, Row, Col, Label } from 'reactstrap';
 import PropTypes from 'prop-types';
-import timerVideo from '../assets/321.mp4'
+import timer from '../assets/321.gif'
 
 const propTypes = {
   item: PropTypes.object.isRequired,
@@ -26,9 +26,13 @@ export default class SearchItem extends Component {
 
   render() {
     const videoRenderer = (
-      <div id="game-cont">
-        <video src={timerVideo} type="video/mp4" autoPlay preload='auto' />
-      </div>
+      <Container className="d-flex" id="game-cont">
+        <Row className="align-items-center w-100">
+          <Col>
+            <img src={timer} />
+          </Col>
+        </Row>
+      </Container>
     );
     const frameRenderer = (
       <Container className="d-flex" id="game-cont">
