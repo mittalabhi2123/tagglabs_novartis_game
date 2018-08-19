@@ -33,15 +33,11 @@ export default class SearchItem extends Component {
     const frameRenderer = (
       <Container className="d-flex" id="game-cont">
         <Row className="align-items-center w-100">
-          <Col>
-            <Container>
-              <Row>
-                <Col className="text-center">
-                  <h4 class="display-4">{this.props.item ? 'Find ' + this.props.item.Name : ''}</h4>
-                </Col>
-              </Row>
-            </Container>
-          </Col>
+          <div id="find-box">
+            <div>
+              <h1>{this.props.item ? 'Find ' + this.props.item.Name : ''}</h1>
+            </div>
+          </div>
         </Row>
       </Container>
     );
