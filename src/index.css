@@ -38,6 +38,26 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: 0px;
 }
 
+#find-box {
+  width: 88%;
+  padding-top: 100%;
+  position: relative;
+  overflow: hidden;
+  background: url("assets/frame.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+}
+
+#find-box > div {
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0; 
+  text-align: center;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+
 #game-cont, #cam-screen {
   width: 100%;
   padding-top: 5vh;
