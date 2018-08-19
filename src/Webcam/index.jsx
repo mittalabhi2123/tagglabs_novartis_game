@@ -138,14 +138,14 @@ class Webcam extends Component {
       navigator.mediaDevices
         .getUserMedia(constraints)
         .then((stream) => {
-          if (Webcam.mountedInstances.length === 1) {
-            Webcam.mountedInstances[0].handleUserMedia(null, stream);
-          } else if (Webcam.mountedInstances.length > 1) {
-            Webcam.mountedInstances[1].handleUserMedia(null, stream);
-          }
-          // Webcam.mountedInstances.forEach(instance =>
-          //   instance.handleUserMedia(null, stream),
-          // );
+          // if (Webcam.mountedInstances.length === 1) {
+          //   Webcam.mountedInstances[0].handleUserMedia(null, stream);
+          // } else if (Webcam.mountedInstances.length > 1) {
+          //   Webcam.mountedInstances[1].handleUserMedia(null, stream);
+          // }
+          Webcam.mountedInstances.forEach(instance =>
+            instance.handleUserMedia(null, stream),
+          );
         })
         .catch((e) => {
           Webcam.mountedInstances.forEach(instance =>
@@ -153,7 +153,6 @@ class Webcam extends Component {
           );
         });
     };
-debugger;
     if (this.props.audioSource && this.props.videoSource) {
       sourceSelected(this.props.audioSource, this.props.videoSource);
     } else if ('mediaDevices' in navigator) {
@@ -164,10 +163,12 @@ debugger;
           let videoSource = null;
 
           devices.forEach((device) => {
+          console.log(device.kind + ": " + device.label +
+            " id = " + device.deviceId);
             if (device.kind === 'audioinput') {
-              audioSource = device.id;
+              audioSource = device.deviceId;
             } else if (device.kind === 'videoinput') {
-              videoSource = device.id;
+              videoSource = device.deviceId;
             }
           });
 
