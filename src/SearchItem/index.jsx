@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Row, Col, Label } from 'reactstrap';
+import { Container, Row, Col, Label } from 'reactstrap';
 import PropTypes from 'prop-types';
 import timerVideo from '../assets/321.mp4'
 
@@ -26,27 +26,22 @@ export default class SearchItem extends Component {
 
   render() {
     const videoRenderer = (
-      <div>
-        {<video width="100%"
-          src={timerVideo} type="video/mp4" autoPlay preload='auto' />}
-      </div>
+      <video width="100%" src={timerVideo} type="video/mp4" autoPlay preload='auto' />
     );
     const frameRenderer = (
-      <div>
-        <div style={{position:"absolute", top:"45%", left:"30%"}}>
-          <Row>
-            <Col xs="4"/>
-            <Col xs="8"><Label style={{color:"white", fontSize:"-webkit-xxx-large", textAlign: "center"}}>
-              {this.props.item && 'Find'}
-            </Label></Col>
-          </Row>
-          <Row>
-            <Col><Label style={{color:"white", fontSize:"-webkit-xxx-large", textAlign: "center"}}>
-              {this.props.item ? this.props.item.Name : ''}
-            </Label></Col>
-          </Row>
-        </div>
-      </div>
+      <Container className="d-flex h-100" id="game-cont">
+        <Row className="align-items-center w-100">
+          <Col>
+            <Container>
+              <Row>
+                <Col className="text-center">
+                  <h3 class="display-3">{this.props.item ? 'Find ' + this.props.item.Name : ''}</h3>
+                </Col>
+              </Row>
+            </Container>
+          </Col>
+        </Row>
+      </Container>
     );
     return (
       <Fragment>

@@ -7,13 +7,7 @@ export default class Main extends React.Component {
   render() {
     return (
       <HashRouter>
-        <Container className="d-flex h-100">
-          <Row className="align-items-center w-100">
-            <Col>
-              <Route exact path="/" component={Landing}/>
-            </Col>
-          </Row>
-        </Container>
+        <Route exact path="/" component={Landing}/>
       </HashRouter>
     );
   }

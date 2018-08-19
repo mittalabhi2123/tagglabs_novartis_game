@@ -7,9 +7,38 @@ body {
   background-repeat: no-repeat;
   background-color: #04518f !important;
   background-size: cover;
-  padding-top: 2rem;
   color: #FFFFFF;
 }
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold!important;
+}
+
+#register-cont {
+  padding-top: 2rem;
+}
+
+#game-cont {
+  padding-top: 5vh;
+}
+
+#status_bar {
+  position: absolute;
+  background: #000000;
+  background: rgba(0,0,0,0.85);
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding: 0 1.5rem 0;
+  height: 5vh;
+  line-height: 5vh;
+}
+
+#status_bar img {
+  height: 5vh;
+  vertical-align: bottom;
+  margin-left: 1.5rem;
+
+}
+
+#status_bar img:first-child {
+  margin-left: 0px;
 }
