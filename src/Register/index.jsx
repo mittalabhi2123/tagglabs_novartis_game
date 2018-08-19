@@ -52,7 +52,7 @@ export default class Register extends Component {
         <Row>
           <Col />
           <Col sm={6} className="text-center">
-            <Form className="needs-validation" novalidate>
+            <Form>
               <FormGroup>
                 <Input type="text" name="name" id="name" placeholder="Name" />
               </FormGroup>
