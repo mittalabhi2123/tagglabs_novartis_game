@@ -2,8 +2,6 @@ import { initAWS, register } from '../Common/helper.js';
 import React, { Component } from 'react';
 import { Row, Col, Label, Input, Alert, Container, Form, FormGroup, Button } from 'reactstrap';
 import PropTypes from 'prop-types';
-import './styles.scss';
-import buttonWithText from '../assets/buttonWithText.png';
 
 const propTypes = {
   updateStage: PropTypes.func.isRequired,
