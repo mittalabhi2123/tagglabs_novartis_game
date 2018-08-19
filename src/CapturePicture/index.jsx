@@ -53,13 +53,12 @@ export default class CapturePicture extends Component {
   render() {
     return (
       <Fragment>
-        <Card style={{position:"absolute", bottom:"1%", top:"10%", left:"25%"}}>
+        <div id="cam-screen" class="d-flex w-100 align-items-center">
           <Webcam
-            style={{objectFit:"fill", width:"100%", height:"100%"}}
             audio={false}
             ref={node => this.webcam = node}
           />
-        </Card>
+        </div>
       </Fragment>
     );
   }

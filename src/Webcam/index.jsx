@@ -14,11 +14,9 @@ class Webcam extends Component {
   static defaultProps = {
     audio: true,
     className: '',
-    height: 400,
     onUserMedia: () => {},
     onUserMediaError: () => {},
-    screenshotFormat: 'image/jpeg',
-    width: 300,
+    screenshotFormat: 'image/jpeg'
   };
 
   static propTypes = {
