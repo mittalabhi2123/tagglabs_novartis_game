@@ -75,7 +75,7 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 5vh;
   height: 100%
 }
-#game-cont video, #cam-screen video {
+#game-cont video, #game-cont img, #cam-screen video {
   height: auto;
   width: 100%;
   max-width: 100%;
