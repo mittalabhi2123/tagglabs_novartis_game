@@ -1,4 +1,3 @@
-import './styles.scss';
 import React, { Component, Fragment } from 'react';
 import Register from '../Register';
 import Games from '../Games';
@@ -18,7 +17,7 @@ export default class Landing extends Component {
       score: 0,
     };
   }
-  
+
   updateStageInState = (newStage, gameNum, email, name, empId, score) => {
     this.setState({
       stage: newStage,
@@ -56,9 +55,7 @@ export default class Landing extends Component {
 
   renderView = () => {
     const firstScreenRenderer = (
-      <div>
-        <img src={Screen1} width="100%" style={{backgroundSize:"cover"}}/>
-      </div>
+      <h4 className="display-4 text-center">#GetINSPIREady</h4>
     );
     switch (this.state.stage) {
       case 'init':
