@@ -38,15 +38,23 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: 0px;
 }
 
+@keyframes frame-appear {
+  from {background-size: 0%;}
+  to {background-size: 100%;}
+}
+
 #find-box {
   width: 88%;
   padding-top: 100%;
   position: relative;
   overflow: hidden;
   background: url("assets/frame.png");
-  background-size: contain;
+  background-size: 100%;
   background-repeat: no-repeat;
+  background-position: center;
   margin: 0 auto;
+  animation-name: frame-appear;
+  animation-duration: 1.5s;
 }
 
 #find-box > div {
@@ -56,6 +64,10 @@ h1, h2, h3, h4, h5, h6 {
   padding: 5px;
   display: flex;
   align-items: center;
+}
+
+#find-box > div > h1 {
+  margin: 0 auto;
 }
 
 #game-cont, #cam-screen {
