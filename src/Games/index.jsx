@@ -1,6 +1,5 @@
 import { fetchSearchItems } from '../Common/helper.js';
 import { getEventMessage } from '../Common/util.js'
-import './styles.scss';
 import React, { Component, Fragment } from 'react';
 import SearchItem from '../SearchItem';
 import CapturePicture from '../CapturePicture';

@@ -1,4 +1,3 @@
-import './styles.scss';
 import React, { Component, Fragment } from 'react';
 import { Row, Col, Label } from 'reactstrap';
 import PropTypes from 'prop-types';
