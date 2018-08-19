@@ -1,9 +1,7 @@
 import { initAWS, register } from '../Common/helper.js';
 import React, { Component } from 'react';
-import { Row, Col, Label, Input } from 'reactstrap';
+import { Row, Col, Label, Input, Alert, Container, Form, FormGroup, Button } from 'reactstrap';
 import PropTypes from 'prop-types';
-import './styles.scss';
-import buttonWithText from '../assets/buttonWithText.png';
 
 const propTypes = {
   updateStage: PropTypes.func.isRequired,
@@ -34,67 +32,42 @@ export default class Register extends Component {
 
   render() {
     const error = (
-      <Label style={{color:"red", fontSize:"-webkit-xxx-large"}}>{this.state.error}</Label>
+      <Alert color="danger">
+        <h4 className="alert-heading">There was an error!</h4>
+        <p className="mb-0">{this.state.error}</p>
+      </Alert>
     );
     return (
-      <div>
+      <Container>
+        <Row>
+          <Col className="text-center">
+            <h4 className="display-4">#GetINSPIREady</h4>
+            <h4 className="text-warning">Scan and Win!</h4>
+            <p>
+              Locate the elements asked for, with your phone camera. Earn points on finding the right elements and win exciting prizes.
+            </p>
+          </Col>
+        </Row>
         {this.state.error ? error : ''}
-        <Row style={{paddingTop:"4%", paddingBottom:"2%"}}>
-          <Col xs="4" />
-          <Col xs="4">
-            <Label style={{color:"white", fontSize:"-webkit-xxx-large"}}>#GetINSPIREady</Label>
+        <Row>
+          <Col />
+          <Col sm={6} className="text-center">
+            <Form className="needs-validation" novalidate>
+              <FormGroup>
+                <Input type="text" name="name" id="name" placeholder="Name" />
+              </FormGroup>
+              <FormGroup>
+                <Input type="text" name="empId" id="empId" placeholder="Employee Id" />
+              </FormGroup>
+              <FormGroup>
+                <Input type="email" name="email" id="email" placeholder="Email" />
+              </FormGroup>
+              <Button color="warning" className="btn-lg" onClick={this.registerUser}>Let's Try</Button>
+            </Form>
           </Col>
-          <Col xs="4" />
+          <Col />
         </Row>
-        <Row style={{paddingTop:"1%", paddingBottom:"1%"}}>
-          <Col xs="5" />
-          <Col xs="2">
-            <Label style={{color:"#ec9a1e", fontSize:"large", textAlign: "center"}}>Scan and Win</Label>
-          </Col>
-          <Col xs="5" />
-        </Row>
-        <Row style={{paddingTop:"1%"}}>
-          <Col xs="4" />
-          <Col xs="4">
-            <Label style={{color:"white", fontSize:"small", textAlign: "center"}}>
-              Locate the elements asked for, with your phone
-              camera. Earn points on finding the right<br/>
-              elements and win exciting prizes.
-            </Label>
-          </Col>
-          <Col xs="4" />
-        </Row>
-        <Row style={{paddingTop:"2%", paddingBottom:"1%"}}>
-          <Col xs="4" />
-          <Col xs="4">
-            <Input type="text" name="name" id="name" placeholder="Name" />
-          </Col>
-          <Col xs="4" />
-        </Row>
-        <Row style={{paddingTop:"1%", paddingBottom:"1%"}}>
-          <Col xs="4" />
-          <Col xs="4">
-            <Input type="text" name="empId" id="empId" placeholder="Employee Id" />
-          </Col>
-          <Col xs="4" />
-        </Row>
-        <Row style={{paddingTop:"1%", paddingBottom:"1%"}}>
-          <Col xs="4" />
-          <Col xs="4">
-            <Input type="email" name="email" id="email" placeholder="Email" />
-          </Col>
-          <Col xs="4" />
-        </Row>
-        <Row style={{paddingTop:"1%", paddingBottom:"1%"}}>
-          <Col xs="5" />
-          <Col xs="2">
-            <button type="button" onClick={this.registerUser} style={{backgroundColor:"transparent", borderWidth:"0px", width:"160px", height:"60px"}}>
-              <img width="100%" height="70%" border-radius="12px" padding="2px" src={buttonWithText} alt=""/>
-            </button>
-          </Col>
-          <Col xs="5" />
-        </Row>
-      </div>
+      </Container>
     );
   }
 }

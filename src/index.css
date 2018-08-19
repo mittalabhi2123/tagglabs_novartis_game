@@ -1,34 +1,15 @@
+html, body {
+  width: 100%;
+  height: 100%;
+}
 body {
   background-image: url("assets/bg.png");
   background-repeat: no-repeat;
+  background-color: #04518f !important;
   background-size: cover;
+  padding-top: 2rem;
+  color: #FFFFFF;
 }
-h1, h2, p, ul, li {
-  font-family: sans-serif;
-}
-img {
-  border-radius: 25px;
-}
-ul.header li {
-  display: inline;
-  list-style-type: none;
-  margin: 0;
-}
-ul.header {
-  background-color: #111;
-  padding: 0;
-}
-ul.header li a {
-  color: #FFF;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 20px;
-  display: inline-block;
-}
-.content h2 {
-  padding: 0;
-  margin: 0;
-}
-.content li {
-  margin-bottom: 10px;
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold!important;
 }

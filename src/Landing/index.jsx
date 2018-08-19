@@ -1,4 +1,3 @@
-import './styles.scss';
 import React, { Component, Fragment } from 'react';
 import Register from '../Register';
 import Games from '../Games';
@@ -17,11 +16,6 @@ export default class Landing extends Component {
       gamesFinished: 0,
       score: 0,
     };
-  }
-
-  updateBackground = () => {
-    document.getElementById('root').style.backgroundImage = 'url("../assets/bg.png")';
-    document.getElementById('root').style.backgroundSize = 'cover';
   }
 
   updateStageInState = (newStage, gameNum, email, name, empId, score) => {
@@ -54,7 +48,6 @@ export default class Landing extends Component {
       this.setState({
         stage: 'register',
       });
-      this.updateBackground();
     }, 2000);
   }
 
@@ -62,9 +55,7 @@ export default class Landing extends Component {
 
   renderView = () => {
     const firstScreenRenderer = (
-      <div>
-        <img src={Screen1} width="100%" style={{backgroundSize:"cover"}}/>
-      </div>
+      <h4 className="display-4 text-center">#GetINSPIREady</h4>
     );
     switch (this.state.stage) {
       case 'init':
