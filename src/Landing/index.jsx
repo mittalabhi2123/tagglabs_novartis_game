@@ -21,6 +21,7 @@ export default class Landing extends Component {
 
   updateBackground = () => {
     document.getElementById('root').style.backgroundImage = 'url("../assets/bg.png")';
+    document.getElementById('root').style.backgroundSize = 'cover';
   }
 
   updateStageInState = (newStage, gameNum, email, name, empId, score) => {
@@ -62,7 +63,7 @@ export default class Landing extends Component {
   renderView = () => {
     const firstScreenRenderer = (
       <div>
-        <img src={Screen1} height="1920px" width="1080px" left="50%" top="50%" />
+        <img src={Screen1} width="100%" style={{backgroundSize:"cover"}}/>
       </div>
     );
     switch (this.state.stage) {

@@ -28,13 +28,13 @@ export default class SearchItem extends Component {
   render() {
     const videoRenderer = (
       <div>
-        {<video height="1920px" width="1080px"
+        {<video width="100%"
           src={timerVideo} type="video/mp4" autoPlay preload='auto' />}
       </div>
     );
     const frameRenderer = (
       <div>
-        <div style={{position:"absolute", top:"100%", left:"30%"}}>
+        <div style={{position:"absolute", top:"45%", left:"30%"}}>
           <Row>
             <Col xs="4"/>
             <Col xs="8"><Label style={{color:"white", fontSize:"-webkit-xxx-large", textAlign: "center"}}>

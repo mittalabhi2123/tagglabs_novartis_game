@@ -14,11 +14,11 @@ class Webcam extends Component {
   static defaultProps = {
     audio: true,
     className: '',
-    height: 300,
+    height: 400,
     onUserMedia: () => {},
     onUserMediaError: () => {},
     screenshotFormat: 'image/jpeg',
-    width: 400,
+    width: 300,
   };
 
   static propTypes = {
@@ -138,9 +138,14 @@ class Webcam extends Component {
       navigator.mediaDevices
         .getUserMedia(constraints)
         .then((stream) => {
-          Webcam.mountedInstances.forEach(instance =>
-            instance.handleUserMedia(null, stream),
-          );
+          if (Webcam.mountedInstances.length === 1) {
+            Webcam.mountedInstances[0].handleUserMedia(null, stream);
+          } else if (Webcam.mountedInstances.length > 1) {
+            Webcam.mountedInstances[1].handleUserMedia(null, stream);
+          }
+          // Webcam.mountedInstances.forEach(instance =>
+          //   instance.handleUserMedia(null, stream),
+          // );
         })
         .catch((e) => {
           Webcam.mountedInstances.forEach(instance =>
@@ -148,7 +153,7 @@ class Webcam extends Component {
           );
         });
     };
-
+debugger;
     if (this.props.audioSource && this.props.videoSource) {
       sourceSelected(this.props.audioSource, this.props.videoSource);
     } else if ('mediaDevices' in navigator) {
