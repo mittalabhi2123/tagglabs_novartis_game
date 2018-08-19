@@ -1,12 +1,14 @@
+html, body {
+  width: 100%;
+  height: 100%;
+}
 body {
   background-image: url("assets/bg.png");
   background-repeat: no-repeat;
-  height: 1920px;
-  width: 1080px;
-  left: 50%;
-  top: 50%;
+  background-color: #04518f !important;
+  background-size: cover;
 }
-h1, h2, p, ul, li {
+/*h1, h2, p, ul, li {
   font-family: sans-serif;
 }
 img {
@@ -35,3 +37,4 @@ ul.header li a {
 .content li {
   margin-bottom: 10px;
 }
+*/

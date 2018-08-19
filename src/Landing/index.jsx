@@ -19,10 +19,6 @@ export default class Landing extends Component {
     };
   }
 
-  updateBackground = () => {
-    document.getElementById('root').style.backgroundImage = 'url("../assets/bg.png")';
-  }
-
   updateStageInState = (newStage, gameNum, email, name, empId, score) => {
     this.setState({
       stage: newStage,
@@ -53,7 +49,6 @@ export default class Landing extends Component {
       this.setState({
         stage: 'register',
       });
-      this.updateBackground();
     }, 2000);
   }
 
