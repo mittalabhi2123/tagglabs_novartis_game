@@ -5,6 +5,7 @@ import { Col, Label, Row } from 'reactstrap';
 import Screen1 from '../assets/Screen1.png';
 import search from '../assets/search.png';
 import trophy from '../assets/trophy.png';
+import bg from '../assets/bg.png';
 
 export default class Landing extends Component {
 
