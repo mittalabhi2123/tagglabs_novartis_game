@@ -56,7 +56,7 @@ export default class Landing extends Component {
 
   renderView = () => {
     const firstScreenRenderer = (
-      <h4 className="display-4 text-center">#GetINSPIREady</h4>
+      <h4 className="text-center">#GetINSPIREady</h4>
     );
     switch (this.state.stage) {
       case 'init':
