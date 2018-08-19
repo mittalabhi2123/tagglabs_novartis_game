@@ -120,27 +120,33 @@ class Webcam extends Component {
       navigator.mozGetUserMedia ||
       navigator.msGetUserMedia;
 
-    const sourceSelected = (audioSource, videoSource) => {
-      const constraints = {
-        video: {
-          optional: [{ sourceId: videoSource }],
+      const isMobile = {
+        Android: function() {
+            return navigator.userAgent.match(/Android/i);
         },
-      };
+        BlackBerry: function() {
+            return navigator.userAgent.match(/BlackBerry/i);
+        },
+        iOS: function() {
+            return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+        },
+        Opera: function() {
+            return navigator.userAgent.match(/Opera Mini/i);
+        },
+        Windows: function() {
+            return navigator.userAgent.match(/IEMobile/i);
+        },
+        any: function() {
+            return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+        }
+    };
 
-      if (this.props.audio) {
-        constraints.audio = {
-          optional: [{ sourceId: audioSource }],
-        };
-      }
+    const sourceSelected = (audioSource, videoSource) => {
+      var constraints = { deviceId: { exact: videoSource } };
 
       navigator.mediaDevices
-        .getUserMedia(constraints)
+        .getUserMedia({ video: constraints })
         .then((stream) => {
-          // if (Webcam.mountedInstances.length === 1) {
-          //   Webcam.mountedInstances[0].handleUserMedia(null, stream);
-          // } else if (Webcam.mountedInstances.length > 1) {
-          //   Webcam.mountedInstances[1].handleUserMedia(null, stream);
-          // }
           Webcam.mountedInstances.forEach(instance =>
             instance.handleUserMedia(null, stream),
           );
@@ -161,9 +167,12 @@ class Webcam extends Component {
           let videoSource = [];
           let count = 0;
 
+          let str = '';
           devices.forEach((device) => {
-          console.log(device.kind + ": " + device.label +
-            " id = " + device.deviceId);
+            console.log(device.kind + ": " + device.label +
+              " id = " + device.deviceId);
+            str = str + "(new)" + device.kind + ": " + device.label +
+              " id = " + device.deviceId
             if (device.kind === 'audioinput') {
               audioSource = device.deviceId;
             } else if (device.kind === 'videoinput') {
@@ -173,10 +182,10 @@ class Webcam extends Component {
           if (this.props.videoSource) {
             videoSource.push(this.props.videoSource);
           }
-          if (navigator.userAgent.match(/Android/i)) {
-            sourceSelected(audioSource, videoSource[1]);
-          } else {
+          if (isMobile.iOS() || !isMobile.any()) {
             sourceSelected(audioSource, videoSource[0]);
+          } else {
+            sourceSelected(audioSource, videoSource[1]);
           }
         })
         .catch((error) => {
