@@ -53,9 +53,9 @@ export default class CapturePicture extends Component {
   render() {
     return (
       <Fragment>
-        <Card style={{position:"absolute", top:"50%", left:"10%"}}>
+        <Card style={{position:"absolute", bottom:"1%", top:"10%", left:"25%"}}>
           <Webcam
-            style={{objectFit:"fill"}}
+            style={{objectFit:"fill", width:"100%", height:"100%"}}
             audio={false}
             ref={node => this.webcam = node}
           />

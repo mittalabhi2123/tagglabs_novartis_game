@@ -34,7 +34,7 @@ export default class NewGames extends Component {
 
   render() {
     const gameMessage = (
-      <div style={{position:"absolute", top:"100%", left:"30%"}}>
+      <div style={{position:"absolute", top:"45%", left:"42%"}}>
         {this.props.message.split('<br/>').map(part => (
             <Row>
               <Label style={{color:"white", fontSize:"xx-large", marginLeft: "-10%"}}>

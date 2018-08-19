@@ -39,14 +39,14 @@ export default class Register extends Component {
     return (
       <div>
         {this.state.error ? error : ''}
-        <Row style={{paddingTop:"12%", paddingBottom:"2%"}}>
+        <Row style={{paddingTop:"4%", paddingBottom:"2%"}}>
           <Col xs="4" />
           <Col xs="4">
             <Label style={{color:"white", fontSize:"-webkit-xxx-large"}}>#GetINSPIREady</Label>
           </Col>
           <Col xs="4" />
         </Row>
-        <Row style={{paddingTop:"2%", paddingBottom:"1%"}}>
+        <Row style={{paddingTop:"1%", paddingBottom:"1%"}}>
           <Col xs="5" />
           <Col xs="2">
             <Label style={{color:"#ec9a1e", fontSize:"large", textAlign: "center"}}>Scan and Win</Label>
