@@ -41,8 +41,8 @@ export default class Register extends Component {
       <Container>
         <Row>
           <Col className="text-center">
-            <h4 className="display-4">#GetINSPIREady</h4>
-            <h4 className="text-warning">Scan and Win!</h4>
+            <h4>#GetINSPIREady</h4>
+            <h5 className="text-warning">Scan and Win!</h5>
             <p>
               Locate the elements asked for, with your phone camera. Earn points on finding the right elements and win exciting prizes.
             </p>
